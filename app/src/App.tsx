@@ -24,7 +24,7 @@ export default function App() {
             "--ck-border-radius": "20px",
           }}
         >
-          <BrowserRouter>
+          <BrowserRouter basename="/app">
             <Routes>
               <Route element={<Layout />}>
                 <Route index element={<Dashboard />} />
