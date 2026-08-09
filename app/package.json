@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rolldown/binding-win32-x64-msvc": "^1.2.1",
     "@tanstack/react-query": "^5.101.4",
     "connectkit": "^1.9.2",
     "react": "^18.3.1",
