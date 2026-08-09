@@ -495,7 +495,7 @@ display: none;
         // Change APP_URL when you have a production app URL (e.g. a
         // subdomain like https://app.duelink.xyz, or a path if you reverse-
         // proxy /app to the Vite build's output).
-        const APP_URL = "https://app.duelink.xyz"; // <-- set this once deployed
+        const APP_URL = "/app";
         const isLocalTesting = ["localhost", "127.0.0.1", ""].includes(window.location.hostname);
         const resolvedAppUrl = isLocalTesting ? "http://localhost:5173" : APP_URL;
         document.querySelectorAll("[data-app-link]").forEach((el) => el.setAttribute("href", resolvedAppUrl));

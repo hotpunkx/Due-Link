@@ -1,8 +1,9 @@
 {
   "rewrites": [
+    { "source": "/app", "destination": "/app/index.html" },
     { "source": "/app/(.*)", "destination": "/app/index.html" },
     { "source": "/inbox", "destination": "/app/index.html" },
     { "source": "/create", "destination": "/app/index.html" },
-    { "source": "/link/(.*)", "destination": "/app/index.html" }
+    { "source": "/links/(.*)", "destination": "/app/index.html" }
   ]
 }
