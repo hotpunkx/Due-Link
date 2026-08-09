@@ -28,7 +28,7 @@ export default function Layout() {
 
       <header className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 border-b border-white/5 bg-[#09090b]/80 backdrop-blur-md">
         <Link to="/" className="text-xl font-medium tracking-widest text-white flex items-center gap-2">
-          <iconify-icon icon="solar:link-round-angle-linear" class="text-cyan-400 text-2xl"></iconify-icon>
+          <img src="/logo.png" alt="DueLink Logo" className="h-6 w-auto" />
           DUELINK
         </Link>
         <nav className="hidden md:flex items-center gap-8">
