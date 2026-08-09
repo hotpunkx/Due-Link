@@ -1,0 +1,530 @@
+<html lang="en"><head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DueLink — One Link for Any Obligation | Built on Arc</title>
+<meta name="description" content="DueLink turns any agreement between two wallets — a payment, a loan, an escrow trade, or an invoice — into one onchain object that enforces itself. Sub-second settlement, $0.01 gas, built on Arc.">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Iconify -->
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<style>
+/* Hide default detail marker for Webkit */
+details > summary::-webkit-details-marker {
+display: none;
+}
+</style>
+</head>
+<body class="bg-[#09090b] text-white overflow-x-hidden selection:bg-cyan-500/30 scroll-smooth" style="font-family: 'Inter', sans-serif;">
+
+    <!-- Ambient Global Background -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none" style="background-color: #09090b;">
+        <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full opacity-10 blur-[120px]" style="background: radial-gradient(circle, #00e5ff 0%, transparent 70%);"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full opacity-[0.08] blur-[120px]" style="background: radial-gradient(circle, #b388ff 0%, transparent 70%);"></div>
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);"></div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 transition-all duration-300 border-b border-transparent backdrop-blur-md">
+        <div class="text-xl font-medium tracking-widest text-white flex items-center gap-2">
+            <iconify-icon icon="solar:link-round-angle-linear" class="text-cyan-400 text-2xl" stroke-width="1.5"></iconify-icon>
+            DUELINK
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="#problem" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Platform</a>
+            <a href="#advantage" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Solution</a>
+            <a href="#pricing" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Pricing</a>
+            <a href="#faq" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">FAQ</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-4">
+            <button class="text-sm font-light text-zinc-400 hover:text-white transition-colors">Log in</button>
+            <a href="/app" data-app-link class="text-sm font-light text-white px-5 py-2 rounded-full border border-cyan-500/30 bg-white/5 hover:bg-cyan-500/10 hover:border-cyan-500/60 hover:shadow-[0_0_15px_rgba(0,229,255,0.15)] transition-all">Launch App</a>
+        </div>
+        <button class="md:hidden text-white text-2xl">
+            <iconify-icon icon="solar:hamburger-menu-linear" stroke-width="1.5"></iconify-icon>
+        </button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative flex flex-col items-center text-center max-w-[1000px] mx-auto pt-40 md:pt-52 px-6 pb-24 md:pb-32">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5 mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="text-xs text-cyan-400 tracking-widest uppercase font-light">Live on Arc Testnet</span>
+            </div>
+            
+            <h1 class="text-5xl sm:text-7xl md:text-[100px] font-thin tracking-tight leading-[0.95] mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500" style="text-shadow: 0 0 60px rgba(0, 229, 255, 0.25);">
+                Turn "You Owe Me"<br>Into <span class="font-light">One Link</span>.
+            </h1>
+            
+            <p class="text-base md:text-xl font-light text-zinc-400 max-w-[720px] mb-12 leading-relaxed">
+                DueLink is the onchain object for any direct obligation — a payment, a loan, an escrow trade, or an invoice. Set terms once. Funds move exactly as agreed, settled in under a second on Arc.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <div class="relative group">
+                    <div class="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-cyan-500/30 to-purple-500/30"></div>
+                    <a href="/app" data-app-link class="relative px-10 py-4 rounded-full bg-[#0a0a0c]/80 backdrop-blur-xl border border-cyan-500/30 text-white text-base md:text-lg font-light overflow-hidden transition-all duration-500 hover:-translate-y-0.5 hover:border-cyan-400/80 shadow-[0_4px_30px_rgba(0,229,255,0.1)] hover:shadow-[0_10px_40px_rgba(0,229,255,0.25),inset_0_0_20px_rgba(0,229,255,0.1)] flex items-center gap-3">
+                        <span class="relative z-10">Create Your First Link</span>
+                        <iconify-icon icon="solar:arrow-right-linear" class="text-xl relative z-10 group-hover:translate-x-1 transition-transform" stroke-width="1.5"></iconify-icon>
+                    </a>
+                </div>
+                <a href="https://docs.arc.io" class="px-10 py-4 rounded-full bg-white/5 border border-white/10 text-white text-base md:text-lg font-light hover:bg-white/10 transition-colors">
+                    Read the Docs
+                </a>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="relative z-10 w-full max-w-[1200px] mx-auto py-20 px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-thin tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-400 mb-6">The Hidden Cost of Trust-Only Finance</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-8 rounded-3xl bg-[#0f0f12]/40 border border-white/5 backdrop-blur-md flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 mb-6">
+                        <iconify-icon icon="solar:chart-down-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <p class="text-base font-light text-zinc-300 leading-relaxed">Trillions in P2P loans, trades &amp; invoices settle on <span class="text-white font-normal">trust alone</span>, with zero enforcement</p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-[#0f0f12]/40 border border-white/5 backdrop-blur-md flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 mb-6">
+                        <iconify-icon icon="solar:graph-down-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <p class="text-base font-light text-zinc-300 leading-relaxed">Emailed invoices get lost, forgotten, or paid <span class="text-white font-normal">net-60 instead of on time</span></p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-[#0f0f12]/40 border border-white/5 backdrop-blur-md flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-full bg-zinc-800/50 border border-white/10 flex items-center justify-center text-zinc-400 mb-6">
+                        <iconify-icon icon="solar:widget-4-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <p class="text-base font-light text-zinc-300 leading-relaxed">Existing crypto tools are <span class="text-white font-normal">fragmented</span> — one dApp for escrow, another for lending, none for invoices</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="advantage" class="relative z-10 w-full bg-[#0f0f12]/20 border-y border-white/5 py-20 px-6 backdrop-blur-sm">
+            <div class="max-w-[1200px] mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-thin tracking-tight text-white">The DueLink Advantage</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="space-y-8">
+                        <div class="group relative pl-6 border-l border-white/10 hover:border-cyan-500/50 transition-colors">
+                            <h3 class="text-xl font-light text-white mb-2 tracking-tight">One Primitive, Four Use Cases</h3>
+                            <p class="text-sm font-light text-zinc-400 leading-relaxed">Send, Loan, Escrow Trade, or Invoice — all the same object, same flow, same inbox.</p>
+                        </div>
+
+                        <div class="group relative pl-6 border-l border-white/10 hover:border-cyan-500/50 transition-colors">
+                            <h3 class="text-xl font-light text-white mb-2 tracking-tight">Sub-Second Settlement</h3>
+                            <p class="text-sm font-light text-zinc-400 leading-relaxed">Built on Arc — transactions finalize in under a second, every time, no confirmations to wait on.</p>
+                        </div>
+
+                        <div class="group relative pl-6 border-l border-white/10 hover:border-cyan-500/50 transition-colors">
+                            <h3 class="text-xl font-light text-white mb-2 tracking-tight">$0.01 Gas, Paid in USDC</h3>
+                            <p class="text-sm font-light text-zinc-400 leading-relaxed">No gas token to buy or hold. Arc prices every transaction directly in USDC.</p>
+                        </div>
+
+                        <div class="group relative pl-6 border-l border-white/10 hover:border-cyan-500/50 transition-colors">
+                            <h3 class="text-xl font-light text-white mb-2 tracking-tight">Onchain Reputation</h3>
+                            <p class="text-sm font-light text-zinc-400 leading-relaxed">Every fulfilled Link builds a record, so terms hold even with people you've never met.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative rounded-3xl p-2 bg-gradient-to-br from-white/10 to-transparent border border-white/10 shadow-[0_0_50px_rgba(0,229,255,0.05)]">
+                        <div class="absolute inset-0 rounded-3xl bg-cyan-500/5 blur-xl"></div>
+                        <img src="/images/duelink-dashboard.png" alt="DueLink Dashboard Visual" class="relative z-10 rounded-2xl w-full h-auto bg-[#09090b] border border-white/5 object-cover min-h-[300px]" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwOTA5MGIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzUyNTI1YiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPkRhc2hib2FyZCBWaXN1YWw8L3RleHQ+PC9zdmc+'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="relative z-10 w-full max-w-[1200px] mx-auto py-20 px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Feature 1 -->
+                <div class="group relative p-8 rounded-3xl bg-[#0f0f12]/40 border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex w-12 h-12 rounded-xl bg-white/5 border border-white/10 items-center justify-center text-zinc-400 mb-6">
+                            <iconify-icon icon="solar:link-round-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-light tracking-tight text-white mb-3">Any Obligation, One Form</h3>
+                        <p class="text-sm font-light text-zinc-400 leading-relaxed">
+                            Create a Send, Loan, Escrow Trade, or Invoice Link in the exact same simple flow.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group relative p-8 rounded-3xl bg-[#0f0f12]/40 border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex w-12 h-12 rounded-xl bg-white/5 border border-white/10 items-center justify-center text-zinc-400 mb-6">
+                            <iconify-icon icon="solar:shield-check-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-light tracking-tight text-white mb-3">Terms Enforced Onchain</h3>
+                        <p class="text-sm font-light text-zinc-400 leading-relaxed">
+                            Funds move only when your terms are met — enforced by smart contract, not by goodwill.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group relative p-8 rounded-3xl bg-[#0f0f12]/40 border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex w-12 h-12 rounded-xl bg-white/5 border border-white/10 items-center justify-center text-zinc-400 mb-6">
+                            <iconify-icon icon="solar:wallet-money-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-light tracking-tight text-white mb-3">Wallets Without the Friction</h3>
+                        <p class="text-sm font-light text-zinc-400 leading-relaxed">
+                            Circle Developer Wallets onboard anyone — no seed phrase, no gas token to hunt down.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="group relative p-8 rounded-3xl bg-[#0f0f12]/40 border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 backdrop-blur-md overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex w-12 h-12 rounded-xl bg-white/5 border border-white/10 items-center justify-center text-zinc-400 mb-6">
+                            <iconify-icon icon="solar:chart-square-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-light tracking-tight text-white mb-3">Live Status, Not Guesswork</h3>
+                        <p class="text-sm font-light text-zinc-400 leading-relaxed">
+                            Track every Link's status in real time, from creation to onchain settlement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="relative z-10 w-full max-w-[1200px] mx-auto py-20 px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-thin tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-400 mb-4">How It Works</h2>
+                <p class="text-base font-light text-zinc-400">The Link lifecycle, from terms to settlement.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden lg:block absolute top-[140px] left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center p-6 rounded-3xl bg-[#0f0f12]/60 backdrop-blur-md border border-white/5">
+                    <div class="w-10 h-10 rounded-full bg-[#09090b] border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xs font-light mb-4 shadow-[0_0_15px_rgba(0,229,255,0.1)]">01</div>
+                    <h3 class="text-base font-medium text-white mb-2">Create a Link</h3>
+                    <p class="text-xs font-light text-zinc-400 leading-relaxed">Choose Send, Loan, Escrow, or Invoice and set your terms.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center p-6 rounded-3xl bg-[#0f0f12]/60 backdrop-blur-md border border-white/5">
+                    <div class="w-10 h-10 rounded-full bg-[#09090b] border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xs font-light mb-4 shadow-[0_0_15px_rgba(0,229,255,0.1)]">02</div>
+                    <h3 class="text-base font-medium text-white mb-2">Share It</h3>
+                    <p class="text-xs font-light text-zinc-400 leading-relaxed">Send the Link to a wallet, email, or phone number.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center p-6 rounded-3xl bg-[#0f0f12]/60 backdrop-blur-md border border-white/5">
+                    <div class="w-10 h-10 rounded-full bg-[#09090b] border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xs font-light mb-4 shadow-[0_0_15px_rgba(0,229,255,0.1)]">03</div>
+                    <h3 class="text-base font-medium text-white mb-2">They Accept</h3>
+                    <p class="text-xs font-light text-zinc-400 leading-relaxed">Counterparty reviews terms and reputation, then accepts onchain.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative z-10 flex flex-col items-center text-center p-6 rounded-3xl bg-[#0f0f12]/60 backdrop-blur-md border border-white/5">
+                    <div class="w-10 h-10 rounded-full bg-[#09090b] border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xs font-light mb-4 shadow-[0_0_15px_rgba(0,229,255,0.1)]">04</div>
+                    <h3 class="text-base font-medium text-white mb-2">Funds Move on Terms</h3>
+                    <p class="text-xs font-light text-zinc-400 leading-relaxed">USDC settles instantly, or exactly when conditions are met.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="relative z-10 flex flex-col items-center text-center p-6 rounded-3xl bg-[#0f0f12]/60 backdrop-blur-md border border-white/5">
+                    <div class="w-10 h-10 rounded-full bg-[#09090b] border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xs font-light mb-4 shadow-[0_0_15px_rgba(0,229,255,0.1)]">05</div>
+                    <h3 class="text-base font-medium text-white mb-2">Reputation Builds</h3>
+                    <p class="text-xs font-light text-zinc-400 leading-relaxed">Fulfillment is recorded onchain, making your next Link easier to trust.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials & Logos Section -->
+        <section class="relative z-10 w-full max-w-[1200px] mx-auto py-20 px-6 overflow-hidden">
+            <!-- Logos -->
+            <div class="mb-20 text-center">
+                <p class="text-xs uppercase tracking-widest text-zinc-500 mb-8 font-medium">Built on the Circle stack</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale">
+                    <span class="text-lg font-medium text-white tracking-wide">Arc</span>
+                    <span class="text-lg font-medium text-white tracking-wide">USDC</span>
+                    <span class="text-lg font-medium text-white tracking-wide">Circle Wallets</span>
+                    <span class="text-lg font-medium text-white tracking-wide">App Kit</span>
+                </div>
+            </div>
+
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-thin tracking-tight text-white">What People Are Linking</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="relative rounded-3xl bg-[#0f0f12]/40 border border-white/5 p-8 backdrop-blur-xl">
+                    <div class="absolute -top-20 -right-20 w-40 h-40 bg-cyan-500/5 blur-[80px]"></div>
+                    <iconify-icon icon="solar:quote-left-linear" class="text-3xl text-zinc-600 mb-6" stroke-width="1.5"></iconify-icon>
+                    <p class="text-sm font-light text-zinc-300 leading-relaxed mb-8">
+                        "I loaned a client $2,400 for a rush project. DueLink tracked the whole thing — no chasing, no spreadsheet."
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-white/5 pt-6">
+                        <div class="w-10 h-10 rounded-full bg-zinc-800 border border-white/10"></div>
+                        <div>
+                            <h4 class="text-sm font-medium text-white">Freelance Designer</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="relative rounded-3xl bg-[#0f0f12]/40 border border-cyan-500/20 p-8 backdrop-blur-xl shadow-[inset_0_0_30px_rgba(0,229,255,0.03)] transform md:-translate-y-4">
+                    <div class="absolute -bottom-20 -left-20 w-50 h-50 bg-cyan-500/5 blur-[80px]"></div>
+                    <iconify-icon icon="solar:quote-left-linear" class="text-3xl text-cyan-500/50 mb-6" stroke-width="1.5"></iconify-icon>
+                    <p class="text-sm font-light text-white leading-relaxed mb-8">
+                        "Sold my old GPU to a total stranger online with zero chargeback risk. The escrow just worked."
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-white/5 pt-6">
+                        <div class="w-10 h-10 rounded-full bg-zinc-800 border border-white/10"></div>
+                        <div>
+                            <h4 class="text-sm font-medium text-white">Marketplace Seller</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="relative z-10 w-full py-20 px-6 border-t border-white/5 bg-[#050505]/50">
+            <div class="max-w-[1000px] mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-thin tracking-tight text-white mb-4">Pricing Plans</h2>
+                    <p class="text-base font-light text-zinc-400">Pay for what settles. Nothing else.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    
+                    <!-- Tier 1 -->
+                    <div class="p-10 rounded-3xl bg-[#0f0f12]/40 border border-white/5 backdrop-blur-md flex flex-col h-full hover:border-white/10 transition-all">
+                        <h3 class="text-2xl font-light tracking-tight text-white mb-2">Pay As You Go</h3>
+                        <p class="text-sm font-light text-zinc-400 mb-8">No subscription. Fee only on settled Links.</p>
+                        <div class="mb-10">
+                            <span class="text-4xl lg:text-5xl font-thin text-white tracking-tight">0.10%–0.25%</span>
+                            <span class="text-sm text-zinc-500">/settled Link</span>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="/app" data-app-link class="block w-full py-4 text-center rounded-full border border-white/10 bg-white/5 text-white text-base font-light hover:bg-white/10 transition-colors">Create Your First Link</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="p-10 rounded-3xl bg-[#0f0f12]/80 border border-cyan-500/30 backdrop-blur-xl flex flex-col h-full shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_0_20px_rgba(0,229,255,0.05)] relative z-10">
+                        <div class="absolute -top-3 left-8 text-[10px] tracking-widest uppercase text-cyan-400 bg-[#09090b] px-3 py-1 rounded-full border border-cyan-500/30">Most Popular</div>
+                        <h3 class="text-2xl font-light tracking-tight text-white mb-2">Business</h3>
+                        <p class="text-sm font-light text-zinc-400 mb-8">Recurring invoices, branded Links, lower fees.</p>
+                        <div class="mb-10">
+                            <span class="text-4xl lg:text-5xl font-thin text-white tracking-tight">$29–$99</span>
+                            <span class="text-sm text-zinc-500">/month</span>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="/app" data-app-link class="block w-full py-4 text-center rounded-full border border-cyan-500/50 bg-cyan-500/10 text-white text-base font-light hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition-all">Start Business Plan</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="relative z-10 w-full max-w-[800px] mx-auto py-20 px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-thin tracking-tight text-white mb-4">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-[#0f0f12]/40 border border-white/5 rounded-2xl p-6 open:bg-white/[0.02] transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium list-none text-white text-base md:text-lg">
+                        <span class="font-light tracking-tight">Is DueLink custodial?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-cyan-400 shrink-0 ml-4">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" stroke-width="1.5"></iconify-icon>
+                        </span>
+                    </summary>
+                    <p class="text-zinc-400 mt-4 font-light text-sm leading-relaxed">
+                        No. DueLink never holds your funds — everything settles directly between the two parties' wallets through non-custodial smart contracts on Arc.
+                    </p>
+                </details>
+
+                <details class="group bg-[#0f0f12]/40 border border-white/5 rounded-2xl p-6 open:bg-white/[0.02] transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium list-none text-white text-base md:text-lg">
+                        <span class="font-light tracking-tight">Do I need a crypto wallet to use DueLink?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-cyan-400 shrink-0 ml-4">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" stroke-width="1.5"></iconify-icon>
+                        </span>
+                    </summary>
+                    <p class="text-zinc-400 mt-4 font-light text-sm leading-relaxed">
+                        No — Circle Developer Wallets let you get started with just an email. No seed phrase, no gas token to buy. Crypto-native users can connect an external wallet instead.
+                    </p>
+                </details>
+
+                <details class="group bg-[#0f0f12]/40 border border-white/5 rounded-2xl p-6 open:bg-white/[0.02] transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium list-none text-white text-base md:text-lg">
+                        <span class="font-light tracking-tight">What happens if the other party doesn't pay?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-cyan-400 shrink-0 ml-4">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" stroke-width="1.5"></iconify-icon>
+                        </span>
+                    </summary>
+                    <p class="text-zinc-400 mt-4 font-light text-sm leading-relaxed">
+                        It depends on the Link type. Escrow Trades auto-release or route to arbitration, Loans use posted collateral or affect reputation, and Invoices accrue a late fee and stay open until paid.
+                    </p>
+                </details>
+
+                <details class="group bg-[#0f0f12]/40 border border-white/5 rounded-2xl p-6 open:bg-white/[0.02] transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium list-none text-white text-base md:text-lg">
+                        <span class="font-light tracking-tight">Is DueLink regulated?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-cyan-400 shrink-0 ml-4">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" stroke-width="1.5"></iconify-icon>
+                        </span>
+                    </summary>
+                    <p class="text-zinc-400 mt-4 font-light text-sm leading-relaxed">
+                        DueLink is a non-custodial protocol — funds move directly between the two parties' wallets, we never take custody. For large or business-critical obligations, we recommend consulting your own advisor.
+                    </p>
+                </details>
+
+                <details class="group bg-[#0f0f12]/40 border border-white/5 rounded-2xl p-6 open:bg-white/[0.02] transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium list-none text-white text-base md:text-lg">
+                        <span class="font-light tracking-tight">Will DueLink work on other chains?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-cyan-400 shrink-0 ml-4">
+                            <iconify-icon icon="solar:alt-arrow-down-linear" stroke-width="1.5"></iconify-icon>
+                        </span>
+                    </summary>
+                    <p class="text-zinc-400 mt-4 font-light text-sm leading-relaxed">
+                        DueLink is purpose-built for Arc's USDC-native gas and sub-second finality. Cross-chain USDC via Unified Balance is on the roadmap, so a Link could pull funds you hold on other chains.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="relative z-10 flex flex-col items-center justify-center py-24 px-6 overflow-hidden border-t border-white/5 bg-gradient-to-b from-transparent to-[#050505]">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(0,229,255,0.05)_0%,transparent_60%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 text-center max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-thin tracking-tight text-white mb-10 leading-tight">
+                    Turn Your Next Agreement Into a Link
+                </h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/app" data-app-link class="group relative px-8 py-4 rounded-full bg-white text-[#09090b] text-base font-medium overflow-hidden transition-all duration-300 hover:bg-cyan-50">
+                        <span class="relative z-10">Create Your First Link</span>
+                    </a>
+                    <a href="https://docs.arc.io" class="px-8 py-4 rounded-full border border-white/20 text-white text-base font-medium hover:bg-white/5 transition-colors">
+                        Read the Docs
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-[#09090b] pt-20 pb-12 px-6 lg:px-12">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            <div class="flex flex-col gap-6">
+                <div class="text-xl font-medium tracking-widest text-white flex items-center gap-2">
+                    <iconify-icon icon="solar:link-round-angle-linear" class="text-cyan-400 text-2xl" stroke-width="1.5"></iconify-icon>
+                    DUELINK
+                </div>
+                <p class="text-sm font-light text-zinc-500 leading-relaxed">
+                    Onchain infrastructure for every direct financial obligation — payments, loans, escrow trades, and invoices, settled on Arc.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-zinc-500 hover:text-cyan-400 transition-colors"><iconify-icon icon="solar:twitter-linear" class="text-xl" stroke-width="1.5"></iconify-icon></a>
+                    <a href="#" class="text-zinc-500 hover:text-cyan-400 transition-colors"><iconify-icon icon="solar:link-linear" class="text-xl" stroke-width="1.5"></iconify-icon></a>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="text-xs tracking-[0.2em] uppercase text-white font-medium mb-2">Platform</h4>
+                <a href="#problem" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">How it Works</a>
+                <a href="#advantage" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Link Types</a>
+                <a href="#" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Reputation &amp; Trust</a>
+                <a href="#pricing" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Pricing</a>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="text-xs tracking-[0.2em] uppercase text-white font-medium mb-2">Company</h4>
+                <a href="#" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">About Us</a>
+                <a href="#" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Contact</a>
+                <a href="#" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="text-sm font-light text-zinc-400 hover:text-cyan-400 transition-colors">Terms of Service</a>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="text-xs tracking-[0.2em] uppercase text-white font-medium mb-2">Network Status</h4>
+                <div class="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/5 bg-white/[0.02]">
+                    <div class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
+                    <span class="text-xs font-mono text-zinc-400">Arc Testnet — Operational</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="max-w-[1200px] mx-auto border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light text-zinc-600">
+            <p>© 2026 DueLink. All rights reserved.</p>
+            <p>Built on Arc. Secured by USDC.</p>
+        </div>
+    </footer>
+
+    <script>
+        // The landing page and the React app (/app) are two separate builds —
+        // there's no server routing "/app" to anything automatically. This
+        // resolves the "Launch App" / "Create Your First Link" buttons to:
+        //   - http://localhost:5173 (Vite's default `npm run dev` port) when
+        //     you're testing the landing page locally, OR
+        //   - APP_URL below, once you deploy the app somewhere real.
+        // Change APP_URL when you have a production app URL (e.g. a
+        // subdomain like https://app.duelink.xyz, or a path if you reverse-
+        // proxy /app to the Vite build's output).
+        const APP_URL = "https://app.duelink.xyz"; // <-- set this once deployed
+        const isLocalTesting = ["localhost", "127.0.0.1", ""].includes(window.location.hostname);
+        const resolvedAppUrl = isLocalTesting ? "http://localhost:5173" : APP_URL;
+        document.querySelectorAll("[data-app-link]").forEach((el) => el.setAttribute("href", resolvedAppUrl));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header Scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('bg-[#09090b]/80', 'border-white/10');
+                    header.classList.remove('border-transparent');
+                } else {
+                    header.classList.remove('bg-[#09090b]/80', 'border-white/10');
+                    header.classList.add('border-transparent');
+                }
+            });
+            
+            // Close other FAQs when one is opened
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(targetDetail => {
+                targetDetail.addEventListener('click', () => {
+                    detailsElements.forEach(detail => {
+                        if (detail !== targetDetail) {
+                            detail.removeAttribute('open');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body></html>
