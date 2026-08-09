@@ -1,51 +1,76 @@
-DueLink
-One P2P financial primitive for every direct obligation between two wallets — payments, loans, escrow, and invoices — built on Arc.
-Problem
-P2P finance on-chain is fragmented. A wallet-to-wallet loan, an escrowed marketplace trade, a freelance invoice, and a simple payment all use different tools, different trust assumptions, and no shared record. There's no single object that represents "what one address owes another, and under what terms."
-Solution
-DueLink introduces a single primitive — the Link — a direct on-chain obligation between exactly two wallets. Every Link has a type (Payment, Loan, Escrow, Invoice), terms, and a lifecycle. One contract, one mental model, four use cases.
-Key Features
-Unified P2P primitive — one Link struct covers payments, loans, escrow, and invoices
-Bilateral trust, no intermediary — funds move only per the Link's agreed terms
-On-chain repayment schedules — loans and invoices carry due dates and installments
-Escrow release conditions — funds held until both parties confirm, or a dispute window elapses
-Portable reputation — a wallet's Link history (on-time repayments, completed escrows) is public and composable
-USDC-native, Arc-native gas
-Use Cases
-Link type
-Description
-Payment
-Direct one-off or split USDC transfer between two wallets
-Loan
-Peer-to-peer loan with principal, interest, and due date
-Escrow
-Marketplace-style trade held until delivery is confirmed
-Invoice
-Freelancer/business invoice with due date and late-fee terms
-Architecture
-Code
-Tech Stack
-Chain: Arc Network (EVM-compatible, Chain ID 2135)
-Contracts: Solidity ^0.8.20, OpenZeppelin (ReentrancyGuard, Ownable)
-Wallets: Circle Developer Controlled Wallets (SCA)
-Token deploy: Circle Smart Contract Platform (ERC-20 template)
-Backend: Node.js, viem, TypeScript
-Frontend: HTML/CSS/JS + ethers.js v6 (single-file demo app)
-Contract
-LinkCore.sol — core P2P obligation logic.
-Struct Link: id, sender, recipient, linkType (PAYMENT/LOAN/ESCROW/INVOICE), amount, dueDate, interestBps, escrowReleaseCondition, status (PENDING, ACTIVE, DISPUTED, SETTLED, DEFAULTED).
-Functions: createLink, fundLink, repayLink, releaseEscrow, disputeLink, resolveDispute, getLink, getLinksByAddress.
-Events: LinkCreated, LinkFunded, LinkSettled, LinkDisputed, LinkDefaulted.
-Security: nonReentrant on all state-changing functions, only the two Link parties can act on it (plus arbiter on disputes), checks-effects-interactions, custom errors.
-Deployed (Arc Testnet):
-Contract address: TBD
-Network: Arc Testnet, Chain ID 2135
-RPC: https://testnet.rpc.arc.network
-Explorer: https://testnet.arcscan.app
-Run Locally
-Bash
-Demo
-Demo video: TBD
-Landing page / waitlist: TBD
-Built With
-Arc Network · Circle Developer Wallets · Circle Smart Contract Platform
+# DueLink 🔗
+
+One onchain object — the **Link** — for any direct obligation between two wallets: a payment (**Send**), a peer-to-peer loan (**Loan**), a trustless trade (**Escrow**), or a payable bill (**Invoice**). Built on [Arc](https://docs.arc.io), settled in USDC.
+
+This repository contains the full end-to-end codebase:
+- 📃 **Product Requirements Document**: [DueLink_PRD.md](file:///d:/ARC%20DEV/Due%20Link/DueLink_PRD.md)
+- 🎨 **Marketing Landing Page**: [duelink_landing.html](file:///d:/ARC%20DEV/Due%20Link/duelink_landing.html)
+- 🎛️ **Smart Contracts (Foundry / Hardhat)**: [contracts/](file:///d:/ARC%20DEV/Due%20Link/contracts)
+- 📱 **Frontend App (Vite + React + wagmi/viem)**: [app/](file:///d:/ARC%20DEV/Due%20Link/app)
+
+---
+
+## 🚀 Live Deployment Status
+
+The protocol has been successfully deployed to the **Arc Testnet**:
+
+*   **`DueLinkCore` Address**: [`0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12`](https://testnet.arcscan.app/address/0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12)
+*   **`ReputationRegistry` Address**: [`0xC3F1104492B8b4D0bE2f2c411cab18A411335708`](https://testnet.arcscan.app/address/0xC3F1104492B8b4D0bE2f2c411cab18A411335708)
+*   **USDC Token (Arc Testnet)**: `0x3600000000000000000000000000000000000000`
+
+---
+
+## 🛠️ Tech Stack & Features
+
+*   **Smart Contracts**: solidity `^0.8.24`, OpenZeppelin v5, 19/19 tests passing.
+*   **Frontend**: React (Vite), TypeScript, TailwindCSS, ConnectKit + Wagmi/Viem for Web3 wallet integrations.
+*   **Settlement**: Purely in 6-decimal USDC on Arc. Native gas fee paid in USDC (18-decimal).
+
+---
+
+## 💻 Running the App Locally
+
+### 1. Configure the Environment
+Ensure your frontend has the correct contract address configured. In the `app/` folder, create `.env` from `.env.example`:
+
+```bash
+# app/.env
+VITE_DUELINK_CORE_ADDRESS=0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12
+VITE_WALLETCONNECT_PROJECT_ID=your_project_id
+```
+
+### 2. Start the Dev Server
+Install dependencies and run the local development server:
+
+```bash
+cd app
+npm install
+npm run dev
+```
+
+Visit the app at **[http://localhost:5173/](http://localhost:5173/)**.
+
+---
+
+## 📜 Contract Deployment Notes (Hardhat / Foundry)
+
+The contracts were compiled and deployed using Hardhat. If you wish to redeploy or modify contracts, you can configure your environment in `contracts/.env`:
+
+```bash
+PRIVATE_KEY=0x...
+FEE_RECIPIENT=0x...
+PROTOCOL_OWNER=0x...
+```
+
+To deploy via Hardhat (located in adjacent workspace if needed):
+```bash
+npx hardhat run deploy-duelink.js --network arc_testnet
+```
+
+---
+
+## 📐 Design Decisions & Scope
+
+*   **Collateral Liquidation**: Loan collateral liquidation transfers the entire posted collateral to the lender upon default. There is no partial liquidation in v1.
+*   **Late Fees**: Invoice late fees are tracked on-chain but calculated/displayed client-side to prevent compounding interest edge cases within the smart contract.
+*   **Arbitration**: Escrow arbitration is configured as a single trusted address specified during Link creation.

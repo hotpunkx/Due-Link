@@ -1,0 +1,12 @@
+# Git Ignore
+
+node_modules/
+dist/
+out/
+cache/
+broadcast/
+.env
+*.log
+.DS_Store
+duelink.zip
+duelink/
