@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npm run build --prefix app && mkdir -p dist/app && cp -r app/dist/* dist/app/ && cp index.html dist/ && cp logo.png dist/ && cp vercel.json dist/"
+    "build": "npm install --prefix app && npm run build --prefix app && mkdir -p dist/app && cp -r app/dist/* dist/app/ && cp index.html dist/ && cp logo.png dist/ && cp vercel.json dist/"
   }
 }
