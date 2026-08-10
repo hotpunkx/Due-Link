@@ -49,4 +49,12 @@ for (const file of rootFiles) {
   }
 }
 
+// Copy images to dist/images
+const imagesDir = path.join(__dirname, 'images');
+const distImagesDir = path.join(distDir, 'images');
+if (fs.existsSync(imagesDir)) {
+  copyDirSync(imagesDir, distImagesDir);
+  console.log('Copied images directory to dist/images');
+}
+
 console.log('Build completed successfully!');
