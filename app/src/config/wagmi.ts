@@ -1,7 +1,7 @@
 import { createConfig, http } from "wagmi";
 import { mainnet } from "viem/chains";
 import { getDefaultConfig } from "connectkit";
-import { arcTestnet } from "./chain";
+import { arcMainnet } from "./chain";
 
 // A WalletConnect Cloud project id is required for ConnectKit to surface the
 // full universe of EVM wallets (mobile wallets via QR, injected wallets,
@@ -14,12 +14,12 @@ const walletConnectProjectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID ?? 
 
 export const wagmiConfig = createConfig(
   getDefaultConfig({
-    chains: [arcTestnet, mainnet],
+    chains: [arcMainnet, mainnet],
     transports: {
       // mainnet transport included per Arc's own guidance: ConnectKit needs
       // a CORS-safe mainnet transport for ENS lookups even when the app
-      // itself only operates on Arc Testnet.
-      [arcTestnet.id]: http("https://rpc.testnet.arc.network"),
+      // itself only operates on Arc Mainnet.
+      [arcMainnet.id]: http("https://rpc.mainnet.arc.io"),
       [mainnet.id]: http("https://cloudflare-eth.com"),
     },
     walletConnectProjectId,

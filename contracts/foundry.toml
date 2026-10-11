@@ -10,11 +10,11 @@ remappings = [
     "forge-std/=lib/forge-std/src/",
 ]
 
-# Arc Testnet — see https://docs.arc.io/arc/references/connect-to-arc
 [rpc_endpoints]
 arc_testnet = "https://rpc.testnet.arc.network"
+arc_mainnet = "https://rpc.mainnet.arc.io"
 
 [etherscan]
-# ArcScan (testnet.arcscan.app) verification — fill in ARCSCAN_API_KEY in .env
-# once Arc's explorer verification API/key format is confirmed.
+# ArcScan mainnet verification
+# arc_mainnet = { key = "${ARCSCAN_API_KEY}", url = "https://explorer.arc.io/api" }
 # arc_testnet = { key = "${ARCSCAN_API_KEY}", url = "https://testnet.arcscan.app/api" }

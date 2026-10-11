@@ -12,11 +12,16 @@ This repository contains the full end-to-end codebase:
 
 ## 🚀 Live Deployment Status
 
-The protocol has been successfully deployed to the **Arc Testnet**:
+### Arc Mainnet (Chain ID: 5042)
+* **`DueLinkCore` Address**: [`0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12`](https://explorer.arc.io/address/0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12)
+* **`ReputationRegistry` Address**: [`0xC3F1104492B8b4D0bE2f2c411cab18A411335708`](https://explorer.arc.io/address/0xC3F1104492B8b4D0bE2f2c411cab18A411335708)
+* **USDC Token (Arc Mainnet)**: `0x3600000000000000000000000000000000000000`
+* **RPC Endpoint**: `https://rpc.mainnet.arc.io`
 
-*   **`DueLinkCore` Address**: [`0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12`](https://testnet.arcscan.app/address/0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12)
-*   **`ReputationRegistry` Address**: [`0xC3F1104492B8b4D0bE2f2c411cab18A411335708`](https://testnet.arcscan.app/address/0xC3F1104492B8b4D0bE2f2c411cab18A411335708)
-*   **USDC Token (Arc Testnet)**: `0x3600000000000000000000000000000000000000`
+### Arc Testnet (Chain ID: 5042002)
+* **`DueLinkCore` Address**: [`0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12`](https://testnet.arcscan.app/address/0x16bE9E3F21d4CD02B046a85CA99D009785C5Eb12)
+* **`ReputationRegistry` Address**: [`0xC3F1104492B8b4D0bE2f2c411cab18A411335708`](https://testnet.arcscan.app/address/0xC3F1104492B8b4D0bE2f2c411cab18A411335708)
+* **USDC Token (Arc Testnet)**: `0x3600000000000000000000000000000000000000`
 
 ---
 
